@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Формула счастья — аттестация Модуля 5</title>
+<meta name="description" content="Зеркало, удивление, флирт и сцена. Проверь, как усвоился пятый модуль «Формулы счастья».">
+<meta property="og:title" content="Формула счастья — аттестация Модуля 5">
+<meta property="og:description" content="Уверенность, энергия, лёгкость. 8 вопросов на 3 минуты.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Prata&display=swap&subset=cyrillic,latin" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff;
+  --ink:#1c1c1c;
+  --ink-soft:#3d3a39;
+  --muted:rgba(28,28,28,.52);
+  --wine:#7d1220;
+  --wine-deep:#5e0d18;
+  --wine-bright:#c0182b;
+  --wine-soft:#fbeef0;
+  --peach:#f6e3e5;
+  --peach-soft:#fbf3f3;
+  --line:#e8e2e0;
+  --line-soft:#efeae8;
+  --ok:#1e7a4d;
+  --ok-soft:#e8f5ee;
+  --radius:22px;
+  --shadow:0 18px 50px rgba(125,18,32,.10), 0 2px 8px rgba(28,28,28,.04);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{max-width:100%;overflow-x:hidden}
+body{
+  font-family:'Montserrat',-apple-system,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--peach-soft);
+  min-height:100vh;
+  line-height:1.6;
+  position:relative;
+  overflow-x:hidden;
+}
+/* шёлк с баннеров — мягкие винные пятна по углам */
+body::before,body::after{
+  content:"";position:fixed;z-index:0;pointer-events:none;border-radius:50%;
+  filter:blur(60px);opacity:.5;
+}
+body::before{
+  width:52vw;height:52vw;max-width:520px;max-height:520px;
+  top:-16vw;left:-18vw;
+  background:radial-gradient(circle,rgba(192,24,43,.30),rgba(192,24,43,0) 70%);
+}
+body::after{
+  width:60vw;height:60vw;max-width:600px;max-height:600px;
+  bottom:-22vw;right:-20vw;
+  background:radial-gradient(circle,rgba(125,18,32,.24),rgba(125,18,32,0) 70%);
+}
+.wrap{
+  position:relative;z-index:1;
+  width:100%;max-width:680px;margin:0 auto;
+  padding:28px 18px 56px;
+  display:flex;flex-direction:column;min-height:100vh;
+}
+[hidden]{display:none!important}
+
+/* ── шапка бренда ─────────────────────────── */
+.brand{text-align:center;margin-bottom:22px}
+.brand .eyebrow{
+  font-size:10px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;margin-bottom:10px;
+}
+.brand .logo{
+  max-width:100%;
+  font-family:'Prata',Georgia,serif;
+  font-size:clamp(21px,6vw,34px);line-height:1.08;
+  letter-spacing:.04em;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;gap:.16em;flex-wrap:wrap;
+}
+.brand .logo .heart{color:var(--wine-bright);font-size:.52em;transform:translateY(-.22em)}
+.pulse{display:block;margin:12px auto 0;width:112px;height:16px}
+.pulse path{stroke:var(--wine-bright);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── карточка ─────────────────────────────── */
+.card{
+  background:var(--paper);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:clamp(22px,5vw,38px);
+}
+.card + .card{margin-top:16px}
+
+/* ── интро ────────────────────────────────── */
+.tag{
+  display:inline-block;background:var(--wine-soft);color:var(--wine);
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:7px 14px;border-radius:99px;margin-bottom:18px;
+}
+h1{
+  font-family:'Prata',Georgia,serif;font-weight:400;
+  font-size:clamp(25px,6.2vw,36px);line-height:1.2;letter-spacing:-.01em;
+  margin-bottom:14px;
+}
+h1 .accent{color:var(--wine)}
+.lead{font-size:clamp(15px,3.7vw,17px);color:var(--ink-soft);line-height:1.62}
+.lead + .lead{margin-top:12px}
+.meta{
+  display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 26px;
+}
+.meta span{
+  background:var(--peach);color:var(--wine-deep);
+  font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:99px;
+}
+.field{margin-bottom:22px}
+.field label{
+  display:block;font-size:12px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:9px;
+}
+.field input{
+  width:100%;font-family:inherit;font-size:16px;color:var(--ink);
+  padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;
+  background:var(--peach-soft);transition:border-color .18s,background .18s;
+}
+.field input:focus{outline:none;border-color:var(--wine-bright);background:#fff}
+.field .hint{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+/* ── кнопки ───────────────────────────────── */
+.btn{
+  display:block;width:100%;font-family:inherit;font-size:15.5px;font-weight:600;
+  letter-spacing:.02em;padding:17px 24px;border:none;border-radius:99px;
+  cursor:pointer;transition:transform .16s,box-shadow .16s,background .16s;
+  background:linear-gradient(135deg,var(--wine-bright),var(--wine));
+  color:#fff;box-shadow:0 8px 22px rgba(192,24,43,.26);
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(192,24,43,.32)}
+.btn:active{transform:translateY(0)}
+.btn:disabled{opacity:.42;cursor:default;transform:none;box-shadow:none}
+.btn-ghost{
+  background:transparent;color:var(--wine);
+  border:1.5px solid var(--line);box-shadow:none;margin-top:12px;
+}
+.btn-ghost:hover{background:var(--peach-soft);border-color:var(--wine-bright);transform:none;box-shadow:none}
+
+/* ── прогресс ─────────────────────────────── */
+.progress{margin-bottom:22px}
+.progress-top{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:9px;
+}
+.progress-top b{color:var(--wine);font-size:13px;letter-spacing:.06em}
+.bar{height:5px;background:var(--peach);border-radius:99px;overflow:hidden}
+.bar i{
+  display:block;height:100%;border-radius:99px;
+  background:linear-gradient(90deg,var(--wine-bright),var(--wine));
+  transition:width .38s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── вопрос ───────────────────────────────── */
+.qnum{
+  font-family:'Prata',Georgia,serif;font-size:13px;color:var(--wine-bright);
+  letter-spacing:.1em;margin-bottom:10px;
+}
+.qtext{
+  font-family:'Prata',Georgia,serif;font-weight:400;
+  font-size:clamp(19px,4.6vw,23px);line-height:1.38;margin-bottom:22px;
+}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{
+  display:flex;gap:13px;align-items:flex-start;text-align:left;
+  font-family:inherit;font-size:15px;line-height:1.5;color:var(--ink);
+  background:var(--peach-soft);border:1.5px solid var(--line-soft);
+  border-radius:16px;padding:15px 17px;cursor:pointer;width:100%;
+  transition:border-color .16s,background .16s,transform .12s;
+}
+.opt:hover:not(:disabled){border-color:var(--wine-bright);background:#fff}
+.opt:active:not(:disabled){transform:scale(.995)}
+.opt .mark{
+  flex:0 0 25px;height:25px;border-radius:50%;
+  border:1.5px solid var(--line);background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12.5px;font-weight:700;color:var(--muted);
+  transition:all .16s;
+}
+.opt.correct{border-color:var(--ok);background:var(--ok-soft)}
+.opt.correct .mark{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--wine-bright);background:var(--wine-soft)}
+.opt.wrong .mark{background:var(--wine-bright);border-color:var(--wine-bright);color:#fff}
+.opt:disabled{cursor:default}
+.opt.dim{opacity:.46}
+
+/* ── пояснение ────────────────────────────── */
+.explain{
+  margin-top:18px;padding:16px 18px;border-radius:16px;
+  background:var(--peach-soft);border-left:3px solid var(--wine-bright);
+  font-size:14.5px;line-height:1.58;color:var(--ink-soft);
+}
+.explain b{color:var(--wine);font-weight:600}
+.explain .verdict{
+  display:block;font-weight:700;margin-bottom:6px;letter-spacing:.02em;
+  font-size:13px;text-transform:uppercase;
+}
+.explain.is-ok{border-left-color:var(--ok);background:var(--ok-soft)}
+.explain.is-ok .verdict{color:var(--ok)}
+.explain.is-no .verdict{color:var(--wine-bright)}
+
+/* ── результат ────────────────────────────── */
+.score-card{
+  background:linear-gradient(150deg,var(--wine),var(--wine-deep));
+  color:#fff;border-radius:var(--radius);padding:clamp(26px,6vw,40px);
+  text-align:center;position:relative;overflow:hidden;
+  box-shadow:0 20px 48px rgba(94,13,24,.32);
+}
+.score-card::before{
+  content:"";position:absolute;width:250px;height:250px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%);
+  top:-110px;right:-80px;
+}
+.score-card .sc-eyebrow{
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  opacity:.8;font-weight:600;margin-bottom:16px;position:relative;
+}
+.score-card .sc-logo{
+  max-width:100%;overflow-wrap:break-word;
+  font-family:'Prata',Georgia,serif;font-size:clamp(17px,4.6vw,25px);
+  letter-spacing:.05em;text-transform:uppercase;line-height:1.14;
+  margin-bottom:22px;position:relative;
+}
+.score-card .sc-logo .heart{color:#ff8a98;font-size:.5em;vertical-align:.32em}
+.score-num{
+  font-family:'Prata',Georgia,serif;font-size:clamp(50px,15vw,74px);
+  line-height:1;margin-bottom:6px;position:relative;
+}
+.score-num small{font-size:.38em;opacity:.65}
+.score-label{
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  opacity:.85;font-weight:600;margin-bottom:22px;position:relative;
+}
+.score-title{
+  font-family:'Prata',Georgia,serif;font-size:clamp(20px,5vw,26px);
+  line-height:1.3;margin-bottom:12px;position:relative;
+}
+.score-sub{font-size:15px;line-height:1.6;opacity:.92;position:relative}
+.score-name{
+  position:relative;margin-top:22px;padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.22);
+  font-size:14px;letter-spacing:.02em;
+}
+.score-name b{font-weight:600}
+.score-handle{
+  position:relative;margin-top:10px;font-size:12px;
+  letter-spacing:.2em;text-transform:uppercase;opacity:.7;
+}
+.sc-pulse{display:block;margin:16px auto 0;width:96px;height:14px;position:relative}
+.sc-pulse path{stroke:#ff8a98;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+.share{
+  margin-top:16px;background:var(--wine-soft);border-radius:var(--radius);
+  padding:20px 22px;text-align:center;
+}
+.share h3{
+  font-family:'Prata',Georgia,serif;font-weight:400;font-size:18px;
+  margin-bottom:8px;color:var(--wine-deep);
+}
+.share p{font-size:14.5px;color:var(--ink-soft);line-height:1.58}
+.code{
+  display:inline-block;margin-top:14px;background:#fff;
+  border:1.5px dashed var(--wine-bright);border-radius:12px;
+  padding:12px 22px;font-family:'Prata',Georgia,serif;
+  font-size:22px;letter-spacing:.22em;color:var(--wine);
+}
+.review{margin-top:16px}
+.review h3{
+  font-family:'Prata',Georgia,serif;font-weight:400;font-size:19px;margin-bottom:14px;
+}
+.review-item{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:13px 0;border-bottom:1px solid var(--line-soft);font-size:14.5px;line-height:1.5;
+}
+.review-item:last-child{border-bottom:none}
+.review-item .ri-mark{
+  flex:0 0 22px;height:22px;border-radius:50%;display:flex;
+  align-items:center;justify-content:center;font-size:11.5px;font-weight:700;color:#fff;
+}
+.review-item.ok .ri-mark{background:var(--ok)}
+.review-item.no .ri-mark{background:var(--wine-bright)}
+.review-item .ri-q{color:var(--ink-soft)}
+.review-item .ri-a{display:block;margin-top:4px;color:var(--wine);font-weight:600;font-size:13.5px}
+
+.foot{
+  text-align:center;margin-top:28px;font-size:12px;
+  color:var(--muted);letter-spacing:.04em;
+}
+
+@media (max-width:420px){
+  .wrap{padding:20px 14px 44px}
+  .opt{font-size:14.4px;padding:14px 15px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <div class="eyebrow">трансформационный проект</div>
+    <div class="logo"><span>Ф<span class="heart">&#9829;</span>РМУЛА</span><span>СЧАСТЬЯ</span></div>
+    <svg class="pulse" viewBox="0 0 112 16" aria-hidden="true">
+      <path d="M0 8h30l5-6 6 12 6-9 5 3h54"/>
+    </svg>
+  </div>
+
+  <!-- ИНТРО -->
+  <section id="intro" class="card">
+    <span class="tag">Модуль 5 · аттестация</span>
+    <h1>Уверенность, энергия, <span class="accent">лёгкость</span></h1>
+    <p class="lead">Восемь вопросов по пятому модулю: «Богиня в зеркале», техника «удиви себя», игривый флирт, публичные выступления и личный план, чтобы результат остался с тобой.</p>
+    <p class="lead">Это не экзамен и не оценка. Это способ увидеть, что из модуля уже стало твоим знанием, а к чему стоит вернуться.</p>
+    <div class="meta">
+      <span>8 вопросов</span>
+      <span>3 минуты</span>
+      <span>Ответы с пояснением</span>
+    </div>
+    <div class="field">
+      <label for="name">Как тебя зовут</label>
+      <input id="name" type="text" placeholder="Имя" autocomplete="given-name" maxlength="28">
+      <div class="hint">Подставим имя в результат, чтобы им можно было поделиться. Можно пропустить.</div>
+    </div>
+    <button class="btn" id="start">Начать аттестацию</button>
+  </section>
+
+  <!-- ВОПРОСЫ -->
+  <section id="quiz" class="card" hidden>
+    <div class="progress">
+      <div class="progress-top">
+        <span>Вопрос <b id="cur">1</b> из 8</span>
+        <span id="running">0 верных</span>
+      </div>
+      <div class="bar"><i id="fill" style="width:0%"></i></div>
+    </div>
+    <div class="qnum" id="qnum">Вопрос 01</div>
+    <h2 class="qtext" id="qtext"></h2>
+    <div class="opts" id="opts"></div>
+    <div class="explain" id="explain" hidden></div>
+    <button class="btn" id="next" hidden>Дальше</button>
+  </section>
+
+  <!-- РЕЗУЛЬТАТ -->
+  <section id="result" hidden>
+    <div class="score-card" id="scorecard">
+      <div class="sc-eyebrow">трансформационный проект</div>
+      <div class="sc-logo"><span>Ф<span class="heart">&#9829;</span>РМУЛА</span> <span>СЧАСТЬЯ</span></div>
+      <div class="score-num"><span id="scoreN">0</span><small>/8</small></div>
+      <div class="score-label" id="scoreLabel">верных ответов</div>
+      <div class="score-title" id="scoreTitle"></div>
+      <div class="score-sub" id="scoreSub"></div>
+      <div class="score-name" id="scoreName" hidden></div>
+      <div class="score-handle">Модуль 5 · уверенность, энергия, лёгкость</div>
+      <svg class="sc-pulse" viewBox="0 0 96 14" aria-hidden="true">
+        <path d="M0 7h24l4-5 5 10 5-8 4 3h54"/>
+      </svg>
+    </div>
+
+    <div class="share" id="share" hidden>
+      <h3>Поделись — это твоя первая галочка</h3>
+      <p>Сделай скриншот этой карточки и выложи в наш чат. Пусть девочки видят, что модуль пройден — это заводит всю группу.</p>
+      <div class="code" id="codeword">УВЕРЕННОСТЬ</div>
+      <p style="margin-top:12px;font-size:13.5px">Это слово впиши в домашнее задание на платформе — так мы отметим, что аттестация пройдена.</p>
+    </div>
+
+    <div class="card review">
+      <h3 id="reviewTitle">Разбор ответов</h3>
+      <div id="reviewList"></div>
+    </div>
+
+    <button class="btn btn-ghost" id="again">Пройти заново</button>
+  </section>
+
+  <div class="foot">Алина Агеева · @ali_sha_li</div>
+</div>
+
+<script>
+const ВОПРОСЫ = [
+  {
+    q: "Как Алина описывает зеркало в практике «Богиня в зеркале»?",
+    a: [
+      "Как портал к внутренней любви к себе, силе и красоте",
+      "Как инструмент для поиска недостатков, которые нужно исправить",
+      "Как способ сравнить себя с другими",
+      "Как способ контроля веса"
+    ],
+    verno: 0,
+    short: "Портал к любви к себе, силе и красоте",
+    why: "В этой практике зеркало — не проверка на недостатки, а вход к себе: к любви, силе и красоте, которые уже есть внутри."
+  },
+  {
+    q: "Что делать, если во время практики перед зеркалом появляются мысли критика?",
+    a: [
+      "Заметить их и пройти мимо, вспомнив урок по работе с критиком",
+      "Немедленно прекратить практику",
+      "Спорить с критиком вслух",
+      "Записать их для дальнейшего разбора"
+    ],
+    verno: 0,
+    short: "Заметить и пройти мимо",
+    why: "Критик обязательно заглянет — это нормально. Не нужно ни бросать практику, ни спорить: заметить его, как учились во втором модуле, и вернуться к себе в зеркале."
+  },
+  {
+    q: "Какая эмоция, по словам Алины, лежит в основе состояния счастья — ещё до интереса и радости?",
+    a: [
+      "Удивление",
+      "Спокойствие",
+      "Благодарность",
+      "Любопытство"
+    ],
+    verno: 0,
+    short: "Удивление",
+    why: "С удивления начинаются интерес и радость. Поэтому путь к счастью в этом модуле начинается с того, чтобы научиться удивлять себя."
+  },
+  {
+    q: "Чем заканчивается урок «Техника удиви себя»?",
+    a: [
+      "«Танцем счастья» — несколькими минутами удивляющих себя движений под любимую музыку",
+      "Дыхательной практикой на расслабление",
+      "Написанием писем себе",
+      "Практикой ДПДГ"
+    ],
+    verno: 0,
+    short: "«Танцем счастья»",
+    why: "Удивление закрепляется не в голове, а в теле: несколько минут под любимую музыку, движения, которыми удивляешь саму себя."
+  },
+  {
+    q: "С чего Алина предлагает начинать практику флирта, заходя в комнату?",
+    a: [
+      "С намерения — слова-состояния, которое хочется прочувствовать телом, например «манкость»",
+      "С конкретной фразы для знакомства",
+      "С выбора наряда",
+      "С репетиции комплиментов"
+    ],
+    verno: 0,
+    short: "С намерения-состояния",
+    why: "Флирт начинается не со слов, а с состояния. Сначала выбираешь, что хочешь почувствовать телом, например манкость, и заходишь уже из него."
+  },
+  {
+    q: "На что Алина советует переключать внимание, если во время выступления накрывает стресс?",
+    a: [
+      "На лица людей в зале — рассматривать их, устанавливать контакт глазами",
+      "На свои ощущения в теле, чтобы их подавить",
+      "На часы, чтобы отслеживать время",
+      "На заранее написанный текст"
+    ],
+    verno: 0,
+    short: "На лица людей в зале",
+    why: "Когда накрывает, внимание уходит внутрь, в страх. Контакт глазами с живыми людьми возвращает его наружу, и зал из угрозы становится собеседником."
+  },
+  {
+    q: "В чём суть практики визуализации себя на сцене?",
+    a: [
+      "Заранее прожить весь день в голове в позитивном ключе, чтобы психика получила опыт безопасности",
+      "Представить худший сценарий, чтобы подготовиться к нему",
+      "Записать видео с репетицией речи",
+      "Представить, что зала вообще нет"
+    ],
+    verno: 0,
+    short: "Заранее прожить день в позитивном ключе",
+    why: "Психика опирается на прожитый опыт. Если день выступления уже прожит в голове спокойно и хорошо, на сцену выходишь в знакомую, безопасную ситуацию."
+  },
+  {
+    q: "Как Алина предлагает попрощаться со старым состоянием в уроке про личный план?",
+    a: [
+      "Написать старое состояние на одном листке и попрощаться с ним, а на втором — записать новое состояние и практики для его сохранения",
+      "Написать письмо себе в будущее и отправить его по почте",
+      "Сжечь дневник практик прошлого месяца",
+      "Записать голосовое сообщение с благодарностью себе"
+    ],
+    verno: 0,
+    short: "Два листка: старое и новое состояние",
+    why: "Прощание делает перемену настоящей, а второй листок — это план: какое состояние ты выбираешь и какими практиками будешь его поддерживать."
+  }
+];
+
+const ПОРОГ = 6;
+const БУКВЫ = ["А","Б","В","Г"];
+
+// Перемешиваем варианты, чтобы верный не стоял всегда первым
+const тест = ВОПРОСЫ.map(в => {
+  const пары = в.a.map((текст, i) => ({текст, верный: i === в.verno}));
+  for (let i = пары.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [пары[i], пары[j]] = [пары[j], пары[i]];
+  }
+  return {...в, пары};
+});
+
+let шаг = 0, верных = 0, отвечено = false;
+const ответы = [];
+const $ = id => document.getElementById(id);
+
+$("start").addEventListener("click", () => {
+  const имя = $("name").value.trim();
+  if (имя) {
+    $("scoreName").hidden = false;
+    $("scoreName").innerHTML = "Аттестацию прошла <b>" + экран(имя) + "</b>";
+  }
+  $("intro").hidden = true;
+  $("quiz").hidden = false;
+  показать();
+});
+
+function экран(s){
+  return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+function показать(){
+  const в = тест[шаг];
+  отвечено = false;
+  $("cur").textContent = шаг + 1;
+  $("qnum").textContent = "Вопрос " + String(шаг + 1).padStart(2, "0");
+  $("qtext").textContent = в.q;
+  $("fill").style.width = (шаг / тест.length * 100) + "%";
+  $("running").textContent = верных + (верных === 1 ? " верный" : " верных");
+  $("explain").hidden = true;
+  $("next").hidden = true;
+
+  const opts = $("opts");
+  opts.innerHTML = "";
+  в.пары.forEach((п, i) => {
+    const b = document.createElement("button");
+    b.className = "opt";
+    b.type = "button";
+    b.innerHTML = '<span class="mark">' + БУКВЫ[i] + '</span><span>' + экран(п.текст) + '</span>';
+    b.addEventListener("click", () => ответить(i));
+    opts.appendChild(b);
+  });
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function ответить(выбран){
+  if (отвечено) return;
+  отвечено = true;
+  const в = тест[шаг];
+  const кнопки = [...$("opts").children];
+  const прав = в.пары.findIndex(п => п.верный);
+  const угадала = выбран === прав;
+  if (угадала) верных++;
+  ответы.push({q: в.q, short: в.short, ok: угадала});
+
+  кнопки.forEach((b, i) => {
+    b.disabled = true;
+    if (i === прав){ b.classList.add("correct"); b.querySelector(".mark").textContent = "✓"; }
+    else if (i === выбран){ b.classList.add("wrong"); b.querySelector(".mark").textContent = "✕"; }
+    else b.classList.add("dim");
+  });
+
+  const e = $("explain");
+  e.className = "explain " + (угадала ? "is-ok" : "is-no");
+  e.innerHTML = '<span class="verdict">' + (угадала ? "Верно" : "Правильный ответ — " + БУКВЫ[прав]) + '</span>' + экран(в.why);
+  e.hidden = false;
+
+  $("running").textContent = верных + (верных === 1 ? " верный" : " верных");
+  $("fill").style.width = ((шаг + 1) / тест.length * 100) + "%";
+  const n = $("next");
+  n.textContent = шаг === тест.length - 1 ? "Посмотреть результат" : "Дальше";
+  n.hidden = false;
+}
+
+$("next").addEventListener("click", () => {
+  шаг++;
+  if (шаг < тест.length) показать();
+  else итог();
+});
+
+function итог(){
+  $("quiz").hidden = true;
+  $("result").hidden = false;
+  $("scoreN").textContent = верных;
+
+  const прошла = верных >= ПОРОГ;
+  let титул, под;
+  if (верных === 8){
+    титул = "Безупречно";
+    под = "Ты не просто посмотрела модуль — ты его прожила. Зеркало, удивление, флирт и сцена теперь твои инструменты, а личный план поможет их сохранить.";
+  } else if (верных >= ПОРОГ){
+    титул = "Модуль усвоен";
+    под = "Материал лёг. Пару мест стоит освежить — они отмечены ниже, вернись к ним перед следующим модулем.";
+  } else if (верных >= 4){
+    титул = "Почти";
+    под = "Основа есть, но часть модуля ещё не легла. Пересмотри уроки про флирт и публичные выступления, потом пройди аттестацию снова — так надёжнее.";
+  } else {
+    титул = "Стоит вернуться к модулю";
+    под = "Пока материал не закрепился, и это нормально. Пересмотри модуль спокойно, без спешки, и пройди тест заново — со второго раза встанет на место.";
+  }
+  $("scoreTitle").textContent = титул;
+  $("scoreSub").textContent = под;
+  $("scoreLabel").textContent = верных === 1 ? "верный ответ" : (верных >= 2 && верных <= 4 ? "верных ответа" : "верных ответов");
+  $("share").hidden = !прошла;
+
+  const пром = ответы.filter(о => !о.ok);
+  $("reviewTitle").textContent = пром.length ? "К чему вернуться" : "Разбор ответов";
+  const список = $("reviewList");
+  список.innerHTML = "";
+  ответы.forEach((о, i) => {
+    const d = document.createElement("div");
+    d.className = "review-item " + (о.ok ? "ok" : "no");
+    d.innerHTML = '<span class="ri-mark">' + (о.ok ? "✓" : "✕") + '</span>' +
+      '<span class="ri-q">Вопрос ' + (i + 1) + '<span class="ri-a">' + экран(о.short) + '</span></span>';
+    список.appendChild(d);
+  });
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+$("again").addEventListener("click", () => location.reload());
+</script>
+</body>
+</html>
